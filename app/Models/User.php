@@ -10,6 +10,8 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -44,5 +46,20 @@ class User extends Authenticatable
 
     public function isAdministrator() {
         return $this->id == 1;
+    }
+
+     /**
+     * Devolver el centro que coordina.
+     */
+    public function centroCoordinado()
+    {
+        return $this->hasOne(Centro::class, 'coordinador');
+    }
+     /**
+     * Los grupos en los que está matriculado un determinado alumno.
+     */
+    public function grupos()
+    {
+        return $this->belongsToMany(Grupo::class, 'matriculas', 'alumno', 'grupo');
     }
 }
