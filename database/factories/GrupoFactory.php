@@ -22,9 +22,9 @@ class GrupoFactory extends Factory
     public function definition()
     {
         return [
-            'curso' => $this->faker->numberBetween(1, 4),
-            'letra' => $this->faker->randomElement(array ('a','b','c', 'd', 'e', 'f')),
-            'nombre' => $this->faker->randomElement(array ('PRIMARIA','E.S.O','BACHILLERATO', 'F.P.B.', 'G.M.', 'G.S.')),
+            'curso' => $this->faker->numberBetween(1,4),
+            'letra' => $this->faker->randomElement(array('a','b','c','d','e', 'f')),
+            'nombre' => $this->faker->randomElement(array('PRIMARIA','SECUNDARIA','BACHILLER','FP')),
             'anyoescolar' => 1,
             'nivel' => 1,
             'creador' => 1,
