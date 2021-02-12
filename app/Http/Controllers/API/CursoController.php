@@ -70,9 +70,12 @@ class CursoController extends Controller
         $curso->delete();
     }
     public function aulavirtual () {
-        $response = Http::get('https://aulavirtual.murciaeduca.es/webservice/rest/server.php', [
-            'wstoken' => ,
-            'page' => 1,
+
+            $response = Http::get('https://aulavirtual.murciaeduca.es/website/rest/server.php',[
+                'wstoken' => '',
+                'wsfinction' => 'core_enrol_get_users_courses',
+                'moodlewrestformat' =>'json',
+                'usuarioid' => '128892',
         ]);
 
     }
